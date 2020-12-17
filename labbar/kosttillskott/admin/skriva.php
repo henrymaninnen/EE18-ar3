@@ -6,7 +6,7 @@
 * @author     Henry Cantwell <henry.cantwell@elev.ga.ntig.se>
 * @license    PHP CC
 */
-include "./resuser/conn.php";
+include "../resuser/conn.php";
 ?>
 <!DOCTYPE html>
 <html lang="sv">
@@ -15,19 +15,20 @@ include "./resuser/conn.php";
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Blogg</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
     <div class="kontainer">
         <h1>kosttillskott</h1>
+        <nav>
+            <ul class="nav nav-tabs">
+                <li class="nav-item"><a class="nav-link" href="../lasa.php">Läsa</a></li>
+                <li class="nav-item"><a class="nav-link active" href="./skriva.php">Skriva</a></li>
+                <li class="nav-item"><a class="nav-link" href="../sok.php">Sök</a></li>
+            </ul>
+        </nav>
         <form action="#" method="POST">
-            <nav>
-                <ul class="nav nav-tabs">
-                    <li class="nav-item"><a class="nav-link" href="./lasa.php">Läsa</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="./skriva.php">Skriva</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./sok.php">Sök</a></li>
-                </ul>
-            </nav>
+
             <label>Ange kosttillskott <input type="text" name="header"></label>
             <label>Ange syfte med produkten <textarea name="syfte"></textarea></label>
             <label>Ange pris<input name="pris"></label>
@@ -36,14 +37,14 @@ include "./resuser/conn.php";
         <?php
         // Ta emot det som skickas
         $header = filter_input(INPUT_POST, 'header', FILTER_SANITIZE_STRING);
-        $syfe = filter_input(INPUT_POST, 'syfte', FILTER_SANITIZE_STRING);
+        $syfte = filter_input(INPUT_POST, 'syfte', FILTER_SANITIZE_STRING);
         $pris = filter_input(INPUT_POST, 'pris', FILTER_SANITIZE_STRING);
 
         // Om data finns..
         if ($header && $syfte && $pris) {
 
             //skrive sql-satsen
-            $sql = "INSERT INTO `post` (`header`, `syfte` `pris`) VALUES ('$header', '$syfte', '$pris')";
+            $sql = "INSERT INTO post (produktNamn, syfte, pris) VALUES ('$header', '$syfte', '$pris')";
 
             // steg 2: nu kör vi sql-satsnera
             $result = $conn->query($sql);

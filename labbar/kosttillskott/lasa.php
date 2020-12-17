@@ -20,15 +20,14 @@ include "./resuser/conn.php";
 <body>
     <div class="kontainer">
         <h1>kosttillskott</h1>
-            <nav>
-                <ul class="nav nav-tabs">
-                    <li class="nav-item"><a class="nav-link active" href="./lasa.php">Läsa</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./skriva.php">Skriva</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./sok.php">Sök</a></li>
-                </ul>
-            </nav>
-         
-        </form>
+        <nav>
+            <ul class="nav nav-tabs">
+                <li class="nav-item"><a class="nav-link active" href="./lasa.php">Läsa</a></li>
+                <li class="nav-item"><a class="nav-link" href="./admin/skriva.php">Skriva</a></li>
+                <li class="nav-item"><a class="nav-link" href="./sok.php">Sök</a></li>
+            </ul>
+        </nav>
+
         <?php
         //Steg 2. SQL-fråga
         $sql = "SELECT * FROM post";
@@ -45,7 +44,7 @@ include "./resuser/conn.php";
         //steg 3
         while ($rad = $result->fetch_assoc()) {
             echo "<div class=\"inlägg\">";
-            echo "<h5>$rad[header]</h5>";
+            echo "<h5>$rad[produktNamn]</h5>";
             echo "<h6>$rad[syfte]</h6>";
             echo "<p> $rad[pris]</p>";
             echo "</div>";
@@ -53,7 +52,7 @@ include "./resuser/conn.php";
         //Steg 4 Stäng ned anslutningen till databas
 
         $conn->close();
-        
+
         ?>
     </div>
 </body>

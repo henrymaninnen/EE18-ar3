@@ -24,7 +24,7 @@ include "./resuser/conn.php";
             <nav>
                 <ul class="nav nav-tabs">
                     <li class="nav-item"><a class="nav-link" href="./lasa.php">Läsa</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./skriva.php">Skriva</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./admin/skriva.php">Skriva</a></li>
                     <li class="nav-item"><a class="nav-link active" href="./sok.php">Sök</a></li>
                 </ul>
             </nav>
@@ -40,7 +40,7 @@ include "./resuser/conn.php";
         if ($sökterm) {
 
             //skrive sql-satsen
-            $sql = "SELECT * FROM `post` WHERE header LIKE '%$sökterm%' OR syfte LIKE '%$sökterm%' OR pris LIKE '%$sökterm%'";
+            $sql = "SELECT * FROM `post` WHERE produktNamn LIKE '%$sökterm%' OR syfte LIKE '%$sökterm%' OR pris LIKE '%$sökterm%'";
           
             $result = $conn->query($sql);
 
@@ -51,7 +51,7 @@ include "./resuser/conn.php";
             }
             while ($rad = $result->fetch_assoc()) {
                 echo "<div class=\"inlägg\">";
-                echo "<h5>$rad[header]</h5>";
+                echo "<h5>$rad[produktNamn]</h5>";
                 echo "<h6>$rad[syfte]</h6>";
                 echo "<p> $rad[pris]</p>";
                 echo "</div>";
