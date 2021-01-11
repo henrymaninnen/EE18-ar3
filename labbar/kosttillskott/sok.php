@@ -29,7 +29,7 @@ include "./resuser/conn.php";
                 </ul>
             </nav>
             <label>Ange Sökterm<input type="text" name="sökterm"></label>
-            <button>Spara</button>
+            <button>Sök</button>
         </form>
         <?php
         // Ta emot det som skickas
