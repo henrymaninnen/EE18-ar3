@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Globala och lokala variabler</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="kontainer">
+        <h1>Globala och lokala variabler</h1>
+        <label>Längd på lösenordet <input type="text" class="längd" required></label>
+        <button class="btn btn-primary">Ange längd</button>
+        <label>Lösenord <input type="password" class="lösen" required></label>
+        <button class="btn btn-warning">Kontrollera lösenordet</button>
+        <label>Svar <textarea></textarea></label>
+    </div>
+    <script>
+        // Koden som körs först
+        // Element som vi behöver komma åt
+        const rutaAnamn = document.querySelector(".anamn");
+        const rutaLösen = document.querySelector(".lösen");
+        const knappKontroll = document.querySelector(".btn-warning");
+        const knappDemo = document.querySelector(".btn-info");
+        const knappLoggaIn = document.querySelector(".btn-primary");
+        const knappTöm = document.querySelector(".btn-danger");
+        const rutaSvar = document.querySelector("textarea");
+
+        // Skapa globala variabeln längd
+        var lösenLängd = rutaLösen.length;
+
+        // Kod som körs när användaren klickar på knappen 
+        knappKontroll.addEventListener("click", function () {
+            
+        })
+            // Läs av längden och lagra i globala variabeln längd
+
+
+        // Kod som körs när användaren klickar på knappen Kontrollera lösenordet
+
+            // Läs av lösenordet och lägg i en lokal variabel
+
+            // Räkna ut längden på lösenordet och lägg i ny variabel längdLösen
+            // Använd https://devdocs.io/javascript/functions/arguments/length
+
+            // Skriv ut "Ditt lösenord är ... och är ... långt" i rutaSvar (Skriv inte över)
+
+            // Om lösenordet är längre globala variabeln "längd" skriv ut en rad till:
+            // "Lösenordet är minst ... tecken långt"
+
+    </script>
+</body>
+</html>
