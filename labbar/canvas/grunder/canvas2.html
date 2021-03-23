@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas grunder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <canvas width="800" height="600"></canvas>
+
+    <script>
+        //hitta canvas
+        const eCanvas = document.querySelector("canvas");
+        //slå på ritmotron
+        var ctx = eCanvas.getContext("2d");
+        //rita ut en bild
+
+        var bild = new Image();
+        bild.src = "./nedladdning.png";
+        bild.src = "./aik.png"
+        //animationsloopen
+        var x = 0, y = 0;
+        var x2 = 0, y2 = 400;
+        function loopen() {
+            ctx.clearRect(0, 0, 800, 600);
+            requestAnimationFrame(loopen);
+            //ändra postition i xled
+            ctx.drawImage(bild, x, y);
+             x += 5;
+             y += 1;
+             x2 += 5;
+             y1 -= 1;
+        }
+        loopen();
+    </script>
+</body>
+
+</html>

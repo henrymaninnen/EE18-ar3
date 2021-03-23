@@ -1,0 +1,9 @@
+body{
+    background-color: blueviolet;
+}
+canvas{
+    border: 1px solid #888;
+    background-color: cornsilk;
+    margin: auto;
+    display: block;
+}

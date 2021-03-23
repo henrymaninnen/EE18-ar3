@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas grunder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <canvas></canvas>
+
+    <script>
+        var c = document.querySelector("canvas");
+        c.width = 1000;
+        c.height = 600;
+        var ctx = c.getContext("2d");
+
+        //rita huvuduet
+        ctx.beginPath();
+        ctx.fillStyle = "#000";
+        ctx.arc(400,200,50,0,2*Math.PI);
+        ctx.arc(600,200,50,0,2*Math.PI);
+        ctx.fill();
+        ctx.beginPath();
+        ctx.arc(500,300,100,0,2*Math.PI);
+        ctx.fill();
+
+        //rita ögonen
+        ctx.beginPath();
+        ctx.fillStyle = "#FFF";
+        ctx.arc(450,200,20,0,2*Math.PI);
+        ctx.arc(550,200,20,0,2*Math.PI);
+        ctx.fill();
+ctx.arc
+ctx.fill
+    </script>
+</body>
+
+</html>
