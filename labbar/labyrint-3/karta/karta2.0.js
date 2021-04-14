@@ -47,8 +47,20 @@ var mynt = {
     kolumn: 0,
     bild: new Image()
 }
+var monster = {
+    rad: 0,
+    kolumn: 0,
+    bild: new Image()
+}
+var mynt2 = {
+    rad: 0,
+    kolumn: 0,
+    bild: new Image()
+}
+monster.bild.src = "../monster.png"
 figur.bild.src = "../nyckelpiga.png";
 mynt.bild.src = "../coin.png";
+mynt2.bild.src = "../coin.png";
 
 //rita ut fiuren
 function ritaFigur() {
@@ -58,15 +70,18 @@ function ritaFigur() {
     ctx.drawImage(figur.bild, -25, -25, 50, 50);
     ctx.restore();
 }
-function ritaMynt() {
+function ritaMynt(mynt) {
     ctx.drawImage(mynt.bild, mynt.kolumn * 50, mynt.rad * 50, 50, 50);
 }
+function ritaMonster() {
+    ctx.drawImage(monster.bild, monster.kolumn * 50, monster.rad * 50, 50, 50);
+}
 //spawna mynt
-function spawnaMynt() {
+function spawna(objekt) {
     while (true) {
-        mynt.rad = Math.floor(Math.random() * 11);
-        mynt.kolumn = Math.floor(Math.random() * 12);
-        if (karta[mynt.rad][mynt.kolumn] == 0) {
+        objekt.rad = Math.floor(Math.random() * 11);
+        objekt.kolumn = Math.floor(Math.random() * 12);
+        if (karta[objekt.rad][objekt.kolumn] == 0) {
             break;
         }
         console.log();
@@ -74,16 +89,18 @@ function spawnaMynt() {
 }
 
 //plocka myntet, få poäng
-function plockaPoäng() {
+function plockaPoäng(mynt) {
     if (figur.rad == mynt.rad && figur.kolumn == mynt.kolumn) {
         //öka poäng
         figur.poäng++;
         ePoints.textContent = figur.poäng;
         //spawna om myntet
-        spawnaMynt();
+        spawna(mynt);
     }
 }
-spawnaMynt();
+spawna(mynt);
+spawna(mynt2);
+spawna(monster);
 function loopen() {
     //sudda ut canvas
     ctx.clearRect(0, 0, 800, 600)
@@ -91,8 +108,11 @@ function loopen() {
     //rita karta
     ritaKartan();
     ritaFigur();
-    ritaMynt();
-    plockaPoäng();
+    ritaMynt(mynt);
+    ritaMynt(mynt2);
+    ritaMonster();
+    plockaPoäng(mynt);
+    plockaPoäng(mynt2);
     requestAnimationFrame(loopen);
 }
 

@@ -5,9 +5,9 @@ error_reporting(E_ALL);
 //inloggningsuppgifter till vår databas
 
 $host = "localhost";
-$db = "register";
-$user = "register";
-$pass = "65uO9csVb1mzvCSL";
+$db = "henry";
+$user = "henry";
+$pass = "zPL1MuiQyXEDyVYN";
 
 
 // Steg 1 -  Skapa en anslutning

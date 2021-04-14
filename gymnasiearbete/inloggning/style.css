@@ -1,40 +1,107 @@
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro|Damion|Roboto+Slab&display=swap');
 
-/* Enkel CSS-reset */
-html {
-    box-sizing: border-box;
-}
-*, *:before, *:after {
-    box-sizing: inherit;
-}
-body, h1, h2, h3, h4, h5, h6, p, ul {
-    margin: 0;
-    padding: 0;
-}
+/*
+=============== 
+Fonts
+===============
+*/
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
 
-body {
-    background: url("./bilder/georg-bommeli-ybtUqjybcjE-unsplash.jpg") top center no-repeat;
-}
-.kontainer {
-    width: 700px;
-    padding: 2em;
-    margin: 1em auto;
-    min-height: 89vh;
-    background: #c7c7c7c7;
-    border-radius: 5px;
-    font-family: 'Roboto Slab', serif;
-    border: 1px solid #a0a0a0;
-    box-shadow: 1px 1px 4px #686868;
-}
-nav {
-    padding: 1em 0;
-}
-main {
-    padding: 1em;
-    font-size: 0.9em;
-    color: #7b7b7b;
-}
+/*
+=============== 
+Variables
+===============
+*/
 
+:root {
+  /* dark shades of primary color*/
+  --clr-primary-1: hsl(205, 86%, 17%);
+  --clr-primary-2: hsl(205, 77%, 27%);
+  --clr-primary-3: hsl(205, 72%, 37%);
+  --clr-primary-4: hsl(205, 63%, 48%);
+  /* primary/main color */
+  --clr-primary-5: hsl(205, 78%, 60%);
+  /* lighter shades of primary color */
+  --clr-primary-6: hsl(205, 89%, 70%);
+  --clr-primary-7: hsl(205, 90%, 76%);
+  --clr-primary-8: hsl(205, 86%, 81%);
+  --clr-primary-9: hsl(205, 90%, 88%);
+  --clr-primary-10: hsl(205, 100%, 96%);
+  /* darkest grey - used for headings */
+  --clr-grey-1: hsl(209, 61%, 16%);
+  --clr-grey-2: hsl(211, 39%, 23%);
+  --clr-grey-3: hsl(209, 34%, 30%);
+  --clr-grey-4: hsl(209, 28%, 39%);
+  /* grey used for paragraphs */
+  --clr-grey-5: hsl(210, 22%, 49%);
+  --clr-grey-6: hsl(209, 23%, 60%);
+  --clr-grey-7: hsl(211, 27%, 70%);
+  --clr-grey-8: hsl(210, 31%, 80%);
+  --clr-grey-9: hsl(212, 33%, 89%);
+  --clr-grey-10: hsl(210, 36%, 96%);
+  --clr-white: #fff;
+  --clr-red-dark: hsl(360, 67%, 44%);
+  --clr-red-light: hsl(360, 71%, 66%);
+  --clr-green-dark: hsl(125, 67%, 44%);
+  --clr-green-light: #6be675;
+  --clr-black: #222;
+  --ff-primary: "Roboto", sans-serif;
+  --ff-secondary: "Open Sans", sans-serif;
+
+}
+ /*body-container*/
+ body{
+    background-color: rgb(247, 240, 233);
+  }
+  .container{
+    margin: 0px 100px;
+  }
+  /*nav*/
+  .nav{
+    font-family: var(--ff-secondary);
+    padding-top: 40px;
+  }
+  .nav-header{
+    display: flex;
+    font-size: 19px;
+    letter-spacing: 2px;
+    justify-content: space-between;
+  }
+  .logo-a{
+    font-size: 19px;
+    
+  }
+  .burger div{
+    width: 25px;
+    height: 3px;
+    margin: 5px;
+    background-color: var(--clr-black);
+  }
+  .links{
+    display: flex;
+    justify-content: space-around;
+    width: 45%;
+  }
+  .links li{
+    list-style: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  nav a{
+    text-decoration: none;
+    color: #222;
+    font-family: var(--ff-primary);
+  }
+  .burger{
+   display: none;
+   font-size: 30px;
+   cursor: pointer;
+  }
+h1{
+    display: flex;
+    justify-content: center;
+    padding: 10px 0px 50px 0px;
+    font-family: var(--ff-secondary);
+}
 form {
     background: #ffffffa3;
     border: 1px solid #a0a0a0;
@@ -69,59 +136,4 @@ form button {
     font-weight: bold;
     color: #FFF;
     background-color: #55a5d2;
-}
-
-
-h1, h2, h3, h4, h5, h6 {
-    font-size: 1em;
-    font-weight: bold;
-}
-h1, h2, h3, p {
-    margin: 0.8em 0;
-}
-h1 {
-    color: #ffffff;
-    font-size: 3em;
-    margin: 0;
-    text-shadow: 1px 1px 1px #5c5c5c;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    border: 1px solid #b89e44;
-    background: #ffffffa3;
-    padding: 2em;
-    border-radius: 5px;
-}
-th, td {
-    padding: 0.5em;
-    text-align: left;
-}
-th {
-    background: #FFF;
-    padding: 1em 0.5em;
-}
-tr:nth-child(even) {
-    background: #f1f1f1;
-}
-/* tr:nth-child(odd) {
-    background: #FFF;
-} */
-table .fa {
-    color: #55a5d2;
-}
-table img {
-    width: 50px;
-}
-form img {
-    width: 30px;
-}
-
-.inlagg {
-    background: #ffffffa3;
-    border: 1px solid #b89e44;
-    padding: 2em;
-    margin-bottom: 2em;
-    border-radius: 5px;
 }

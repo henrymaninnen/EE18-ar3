@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Variabler och funktioner</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="uppgift-1.css">
+</head>
+<body>
+    <div class="kontainer">
+        <h1>Variabler och funktioner</h1>
+        <label>Namn<input type="text" class="namn"></label>
+        <label>Ålder<input type="text" class="ålder"></label>
+        <label>Pinkod<input type="password" class="kod"></label>
+        <button class="btn btn-primary" id="btn">Skicka</button>
+        <label>Svar <textarea></textarea></label>
+    </div>
+    <script>
+        // Koden som körs först
+        // Element som vi behöver komma åt
+        const rutaNamn = document.querySelector(".namn");
+        const rutaÅlder = document.querySelector(".ålder");
+        const btn = document.querySelector("#btn");
+        const text = document.querySelector("textarea");
+        const pinKod = document.querySelector(".kod");
+
+        //läs av pinkoden
+
+
+
+        //kod som körs när jag klickar på knappen
+        btn.addEventListener("click", function () {
+            //läs av det som står i namnrutan
+            var namn = rutaNamn.value;
+            var ålder = rutaÅlder.value;
+            var kod = pinKod.value;
+
+            if (kod == 123) {
+                text.textContent = namn + " " + ålder;
+            } else {
+                text.textContent = "Fel Pinkod"
+            }
+        })
+
+    </script>
+</body>
+</html>
