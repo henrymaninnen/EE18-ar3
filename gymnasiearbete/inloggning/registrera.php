@@ -71,7 +71,7 @@ include "./resuser/conn.php";
             <form action="#" method="post">
                 <label>Användarnamn <input type="text" name="anamn" required></label>
                 <label>Lösenord <input type="password" name="hash" required></label>
-                <label>Email<input type="password" name="mail" required></label>
+                <label>Email<input type="email" name="mail" required></label>
                 <button>Registrera</button>
             </form>
             <?php

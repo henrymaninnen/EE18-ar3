@@ -5,7 +5,7 @@ questions.forEach(function (question) {
   const btn = question.querySelector(".question-btn");
   // console.log(btn);
 
-  btn.addEventListener("click", function () {
+  question.addEventListener("click", function () {
     // console.log(question);
 
     questions.forEach(function (item) {

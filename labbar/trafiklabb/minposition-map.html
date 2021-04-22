@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="kontainer">
+        <h1>Geolocation</h1>
+        <p></p>
+        <div id="map"></div>
+    </div>
+    <script>
+        //hitta element
+        const p = document.querySelector("p");
+
+        mapboxgl.accessToken = 'pk.eyJ1IjoiaGVucnltYW5pbm5lbjExMiIsImEiOiJja2w2ZHNlMTYwNHp3MnZucDloZ3hjN3FyIn0.LbzF4TYHiTd6NrwSomai2Q'; // replace this with your access token
+        //skapa kartan
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/henrymaninnen112/ckm1xgkhqamx417ljtehfwvva', // replace this with your style URL
+            center: [18.080569, 59.309585],
+            zoom: 10.7
+        });
+        //är geolocation påslagen?
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(visaPosition);
+        } else {
+            p.textContent = "lucas är en noob på fifa";
+        }
+        //skriv ut position
+        function visaPosition(position) {
+            var latitude = position.coords.latitude;
+            var longitude = position.coords.longitude;
+
+            p.textContent = "Din position är: latitide = " + latitude + ", longitude = " + longitude;
+        }
+    </script>
+</body>
+</html>
