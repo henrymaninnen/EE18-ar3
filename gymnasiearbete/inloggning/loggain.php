@@ -20,46 +20,21 @@ session_start();
 </head>
 <body>
     <div class="container">
-        <header>
-        <div class="nav">
-          <!-- nav header -->
-          <div class="nav-header">
-           <h1>DONKEYSOΛP</h1>
-          <!-- links -->
-          <ul class="links">
-            <li>
-              <a href="../main/index.html">Hem</a>
-            </li>
-            <li>
-              <a href="../about-us/recensioner.html">Om oss</a>
-            </li>
-            <li>
-              <a href="../inloggning/loggain.php">Logga in</a>
-            </li>
-            <li>
-              <a href="../soap/index.html">tåvlen</a>
-            </li>
-          </ul>
-          <div class="burger">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
-            </div>
-          </div>
-          </div>
-          
-            <nav>
-                <ul class="nav nav-tabs">
-                    <?php if (isset($_SESSION["anamn"])) { ?>
-                        <li class="nav-item"><a class="nav-link active" href="./logout.php">Logga ut</a></li>
-                        <li class="nav-item"><a class="nav-link" href="./lista.php">Lista</a></li>
-                    <?php } else { ?>
-                        <li class="nav-item"><a class="nav-link active" href="./login.php">Logga in</a></li>
-                        <li class="nav-item"><a class="nav-link" href="./registrera.php">Registrera</a></li>
-                    <?php } ?>
-                </ul>
-            </nav>
-        </header>
+    <nav>
+      <div class="logo">
+        <a href="../main">Donkey soap</a>
+      </div>
+      <ul class="nav-links">
+        <li id="bottom-link"><a href="../tvalen/">tvålen</a></li>
+        <li><a href="../om-oss">om oss</a></li>
+        <li><a href="../inloggning/loggain.php">logga in</a></li>
+      </ul>
+      <div class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+    </nav>
         <main>
             <form action="#" method="post">
                 <label>Användarnamn <input type="text" name="anamn" required></label>
