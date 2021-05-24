@@ -101,7 +101,34 @@ body.nav-active .footer {
   display: none;
 }
 
-/*Reviews*/
+/*  global classes */
+
+/* section */
+.section {
+  padding: 5rem 0;
+}
+
+.section-center {
+  width: 90vw;
+  margin: 0 auto;
+  max-width: 1170px;
+}
+@media screen and (min-width: 992px) {
+  .section-center {
+    width: 95vw;
+  }
+}
+main {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+/*
+=============== 
+Reviews
+===============
+*/
 main {
   min-height: 100vh;
   display: grid;
@@ -109,32 +136,19 @@ main {
 }
 .title {
   text-align: center;
-  margin-bottom: 3rem;
-  margin-top: 7rem;
-}
-.title h2{
-  color: #C59D5F;
+  margin-bottom: 4rem;
 }
 .underline {
   height: 0.25rem;
   width: 5rem;
-  background: #fff;
+  background: #EED9C4;
   margin-left: auto;
   margin-right: auto;
 }
 .container {
-display: flex;
-flex-direction: column;
-margin: 80px auto;
-width: 50%;
-padding-bottom: 90px;
-}
-
-@media screen and (max-width: 768px) {
-  .container {
-    width: auto;
-    margin: 0 24px;
-  }
+  width:70%;
+  max-width: var(--fixed-width);
+  margin: 22vh auto;
 }
 .review {
   background: var(--clr-white);
@@ -166,6 +180,7 @@ padding-bottom: 90px;
 .img-container::after {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
+  content: "\f10e";
   position: absolute;
   top: 0;
   left: 0;
@@ -175,15 +190,15 @@ padding-bottom: 90px;
   place-items: center;
   border-radius: 50%;
   transform: translateY(25%);
-  background: #e4d5b7;
+  background: #EED9C4;
   color: var(--clr-white);
 }
 .img-container::before {
   content: "";
   width: 100%;
   height: 100%;
-  background: #e4d5b7;
-  position: absolute;
+  background: #EED9C4;
+  position: absolute; 
   top: -0.25rem;
   right: -0.5rem;
   border-radius: 50%;
@@ -194,7 +209,7 @@ padding-bottom: 90px;
 #job {
   margin-bottom: 0.5rem;
   text-transform: uppercase;
-  color: var(--clr-grey-6);
+  color: #EED9C4;
   font-size: 0.85rem;
 }
 #info {
@@ -202,24 +217,19 @@ padding-bottom: 90px;
 }
 .prev-btn,
 .next-btn {
-  color: #e4d5b7;
+  color: #EED9C4;
+  color: #EED9C4;
   font-size: 1.25rem;
   background: transparent;
   border-color: transparent;
   margin: 0 0.5rem;
   transition: var(--transition);
   cursor: pointer;
-  outline: none;
 }
 .prev-btn:hover,
 .next-btn:hover {
-  color: #e4d5b7;
+  color: var(--clr-grey-8);
 }
-.random-btn:hover {
-  background: #e4d5b7;
-  color:#e4d5b7;
-}
-
 /*
 =============== 
 NAV
@@ -311,6 +321,8 @@ nav {
 .footer-icons i{
   padding-left: 8px;
   padding-right: 8px;
+  color: var(--clr-black);
+  text-decoration: none;
 }
 .footer-text{
   font-size: 13px;
@@ -381,7 +393,7 @@ main {
       overflow-x: hidden;
   }
   .container{
-    margin-top: 100px;
+    margin-top: 20vh;
   }
   .nav-links {
       position: fixed;
@@ -417,7 +429,7 @@ main {
 }
 .title{
   margin-bottom: 1rem;
-  margin-top: 1rem;
+  margin-top: 3rem;
 }
 .title h2{
   font-size: 25px;

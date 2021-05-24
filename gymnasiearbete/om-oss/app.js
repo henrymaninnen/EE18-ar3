@@ -1,13 +1,13 @@
 // local reviews data
 const reviews = [
   {
-    id: 1,
-    name: "Elefterios Sfetsios",
-    job: "IT - Tekniker",
+    id: 3,
+    name: "Henry Cantwell",
+    job: "Web Designer",
     img:
-      "https://media-exp1.licdn.com/dms/image/C4D03AQGmY__yXV64gg/profile-displayphoto-shrink_400_400/0/1616585057594?e=1624492800&v=beta&t=nusBAHx5dVMtcTKjnHVzW6UmsXPbdHYSRsCvSqPpwWg",
+      "https://media-exp1.licdn.com/dms/image/C5603AQGpl5KEYskcDg/profile-displayphoto-shrink_400_400/0/1620289385557?e=1625702400&v=beta&t=RjdB6ILSkZA7IEieKiQATQIxJnz7XhztRtU-Sjci400",
     text:
-      "Jag studerar sista året på NTI Gymnasiet Stockholm och är VD för Donkey soap UF. I framtiden vill jag jobba som IT-säkerhetsspeciallist. Jag har kunskaper inom it-säkerhet och nätverksteknik.",
+    "Jag studerar sista året på NTI Gymnasiet Stockholm och är Webbmaster för Donkey soap UF. I framtiden vill jag jobba med webbutveckling. Jag har kunskaper inom Webbutveckling och nätverksteknik.",
   },
   {
     id: 2,
@@ -19,14 +19,15 @@ const reviews = [
     "Jag studerar sista året på NTI Gymnasiet Stockholm och är Ekonomiansvarig för Donkey soap UF. I framtiden vill jag jobba med cisco. Jag har kunskaper inom cisco och nätverksteknik.",
   },
   {
-    id: 3,
-    name: "Henry Cantwell",
-    job: "Web Designer",
+    id: 1,
+    name: "Elefterios Sfetsios",
+    job: "IT - Tekniker",
     img:
-      "https://scontent-arn2-1.xx.fbcdn.net/v/t31.0-0/c0.55.206.206a/p206x206/265230_10150281281873223_4401239_o.jpg?_nc_cat=110&ccb=1-3&_nc_sid=da31f3&_nc_ohc=Rx1PKvwyOIQAX8uKZkk&_nc_ht=scontent-arn2-1.xx&tp=27&oh=f3c4243c7b4f3f35e2943c4f1704464b&oe=6078EE03",
+      "https://media-exp1.licdn.com/dms/image/C4D03AQGmY__yXV64gg/profile-displayphoto-shrink_400_400/0/1616585057594?e=1624492800&v=beta&t=nusBAHx5dVMtcTKjnHVzW6UmsXPbdHYSRsCvSqPpwWg",
     text:
-    "Jag studerar sista året på NTI Gymnasiet Stockholm och är Webbmaster för Donkey soap UF. I framtiden vill jag jobba med webbutveckling. Jag har kunskaper inom Webbutveckling och nätverksteknik.",
+      "Jag studerar sista året på NTI Gymnasiet Stockholm och är VD för Donkey soap UF. I framtiden vill jag jobba som IT-säkerhetsspeciallist. Jag har kunskaper inom it-säkerhet och nätverksteknik.",
   },
+
 ];
 // select items
 const img = document.getElementById("person-img");

@@ -1,5 +1,4 @@
 <?php
-//slå på felmeddelanden
 error_reporting(E_ALL); 
 
 //inloggningsuppgifter till vår databas
@@ -19,5 +18,5 @@ $conn = new mysqli($host, $user, $pass, $db);
 if ($conn->connect_error) {
     die("kunde inte ansluta: " . $conn->error);
 } else {
-        echo "<p>Det gick bra att ansluta till vår databas</p>";
+        //echo "<p>Det gick bra att ansluta till vår databas</p>";
 }

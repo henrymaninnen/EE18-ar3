@@ -4,15 +4,24 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Väder</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/api.css">
 </head>
 <body>
-    <div class="kontainer">
-        <h1>Dagens drink</h1>
+    
+    <div class="container">
+        <div class="header">
+            <a href="">HENRY</a>
+            <h1>Din drink är</h1>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </div>
     <?php
     $url = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
     //gör ett anrop
-   $json = file_get_contents($url);
+    $json = file_get_contents($url);
 
    //avkoda json
    $jsonData = json_decode($json);

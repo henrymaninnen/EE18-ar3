@@ -1,3 +1,14 @@
+<?php
+
+/**
+ * PHP version 7
+ * @category   Inloggning
+ * @author     Henry Cantwell <cantwellhenry61@gmail.com>
+ * @license    PHP CC
+ */
+include "./resuser/conn.php";
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,28 +24,31 @@
 <body>
   <div class="container-img">
     <div class="container">
-        <nav>
-          <div class="logo">
-            <a href="../main">Donkey soap</a>
-          </div> 
-          <ul class="nav-links">
+    <nav>
+            <a id="logo" href="../main">Donkey soap</a>
+        <ul class="nav-links">
+        <?php if (isset($_SESSION["anamn"])) { ?>
             <li><a href="../tvalen">tvålen</a></li>
             <li><a href="../om-oss">om oss</a></li>
-            <li><a href="../inloggning/loggain.php">logga in</a></li>
-          </ul>
-          <div class="burger">
+            <li><a href="../inloggning/logga-ut.php">logga ut</a></li>
+            <?php } else { ?>
+                <li><a href="../tvalen">tvålen</a></li>
+            <li><a href="../om-oss">om oss</a></li>
+            <li><a href="../inloggning/login.php">logga in</a></li>
+                <?php } ?>
+        </ul>
+        <div class="burger">
             <div class="line1"></div>
             <div class="line2"></div>
             <div class="line3"></div>
-          </div>
-        </nav>
-        <div class="hero">
-          <h1>HANDGJORD TVÅL FÖR ANSIKTET</h1>
-          <p>En handskapad tvål gjord av en liten by i grekland <br> som är gjord på åsnans dyrbara mjölk <br> med
+        </div>
+    </nav>
+    <div class="hero">
+          <h1 id="hero-h1">EN HANDGJORD ANIKTSTVÅL</h1>
+          <p id="hero-p">En handskapad aniskitstvål gjord av en liten by i grekland <br> som är gjord på åsnans dyrbara mjölk <br> med
             massor av vitaminer och minrealer</p>
-          <div class="div-btn">
-            <a class="fill" href="#questions">Vanliga frågor</a>
-          </div>
+            <a class="hero-btn" href="#questions">Vanliga frågor</a>
+        </div>
         </div>
       </nav>
 
@@ -65,9 +79,7 @@
         <!-- question text -->
         <div class="question-text">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est
-            dolore illo dolores quia nemo doloribus quaerat, magni numquam
-            repellat reprehenderit.
+            Du kan köpa vår tvål genom att kontakta oss via instagram, du kan hitta länken längst ner på webbplatsen
           </p>
         </div>
       </article>
@@ -89,9 +101,7 @@
         <!-- question text -->
         <div class="question-text">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est
-            dolore illo dolores quia nemo doloribus quaerat, magni numquam
-            repellat reprehenderit.
+            Tvålen kostar 159kr 
           </p>
         </div>
       </article>
@@ -114,9 +124,7 @@
         <!-- question text -->
         <div class="question-text">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est
-            dolore illo dolores quia nemo doloribus quaerat, magni numquam
-            repellat reprehenderit.
+            Detta är den enda tvålen som är baserad på åsnans mjölk i hela scandinaven, vi är de första som tar det som är så populärt i andra delar och tar det till scandinaven och den är till ett rimligt pris, ge din hud vad den förtjänar
           </p>
         </div>
       </article>
@@ -124,7 +132,7 @@
       <article class="question">
         <!-- question title -->
         <div class="question-title">
-          <p>Var och Hur görs denna tvål?</p>
+          <p>Var och Hur skapas denna tvål?</p>
           <!-- button -->
           <button type="button" class="question-btn">
             <span class="plus-icon">
@@ -138,9 +146,7 @@
         <!-- question text -->
         <div class="question-text">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est
-            dolore illo dolores quia nemo doloribus quaerat, magni numquam
-            repellat reprehenderit.
+            Vår tvål kommer från en liten by i norra grekland där den skapas för hand av invånarna i byn.
           </p>
         </div>
       </article>
@@ -154,18 +160,19 @@
   <div class="footer">
 
     <div class="footer-icons">
-      <i class="fab fa-instagram"></i>
-      <i class="fab fa-facebook-f"></i>
-      <i class="fab fa-twitter"></i>
-      <i class="fab fa-linkedin-in"></i>
+      <a href="https://www.instagram.com/donkeysoapuf/"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.linkedin.com/in/henry-cantwell-65b8091a6/"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.linkedin.com/in/henry-cantwell-65b8091a6/"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.linkedin.com/in/henry-cantwell-65b8091a6/"><i class="fab fa-linkedin-in"></i></a>
     </div>
 
     <div class="footer-text">
       <a href="../om-oss/">Om oss</a>
-      <a href="https://www.facebook.com/henry.cantwell.5">Kontakta oss</a>
+      <a href="https://www.linkedin.com/in/henry-cantwell-65b8091a6/">Kontakta oss</a>
       <a href="https://ungforetagsamhet.se/gymnasiet">läs mer om UF</a> <br>
     </div>
     <p>@Donkey Soap UF</p>
+    
 
   </div>
   <!-- javascript -->

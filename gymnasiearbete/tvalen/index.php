@@ -1,3 +1,14 @@
+<?php
+
+/**
+ * PHP version 7
+ * @category   Inloggning
+ * @author     Henry Cantwell <cantwellhenry61@gmail.com>
+ * @license    PHP CC
+ */
+include "./resuser/conn.php";
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,21 +24,28 @@
 </head>
 <body>
   <div class="container">
-    <nav>
-      <div class="logo">
-        <a href="../main">Donkey soap</a>
-      </div>
-      <ul class="nav-links">
-        <li id="bottom-link"><a href="../tvalen/">tvålen</a></li>
-        <li><a href="../om-oss">om oss</a></li>
-        <li><a href="../inloggning/loggain.php">logga in</a></li>
-      </ul>
-      <div class="burger">
-        <div class="line1"></div>
-        <div class="line2"></div>
-        <div class="line3"></div>
-      </div>
+  <nav>
+        <div class="logo">
+            <a href="../main">Donkey soap</a>
+        </div>
+        <ul class="nav-links">
+        <?php if (isset($_SESSION["anamn"])) { ?>
+            <li><a href="../tvalen">tvålen</a></li>
+            <li><a href="../om-oss">om oss</a></li>
+            <li><a href="../inloggning/logga-ut.php">logga ut</a></li>
+            <?php } else { ?>
+                <li><a href="../tvalen">tvålen</a></li>
+            <li><a href="../om-oss">om oss</a></li>
+            <li><a href="../inloggning/login.php">logga in</a></li>
+                <?php } ?>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
     </nav>
+
   </div>
   <div class="img-container">
     <div class="div-img">
@@ -36,8 +54,7 @@
     <div class="img-text">
       <h1>Donkey soap</h1>
       <h2>169kr</h2>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing <elit class="br"></elit> Illum odit officiis <br>
-        reprehenderit exercitationem odio laudantium esse neque, quasi quibusdam quis?</p>
+      <p>HANDGJORD AV GREKISKA BÖNDER OCH RIK PÅ VITAMINER OCH MINREALER, PH-VÄRDE LIKT DIN HUD SOM INTE GÖR DIN HUD TORR EFTER ANVÄNDING.</p>
       <div class="check-marks">
         <div class="check-mark-item">
         <p><i class="fas fa-check"></i> effektiv mot akne & finnar</p>
@@ -59,16 +76,16 @@
   </div>
   <div class="footer">
 
-    <div class="footer-icons">
-      <i class="fab fa-instagram"></i>
-      <i class="fab fa-facebook-f"></i>
-      <i class="fab fa-twitter"></i>
-      <i class="fab fa-linkedin-in"></i>
+  <div class="footer-icons">
+      <a href="https://www.instagram.com/donkeysoapuf/"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.linkedin.com/in/henry-cantwell-65b8091a6/"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.linkedin.com/in/henry-cantwell-65b8091a6/"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.linkedin.com/in/henry-cantwell-65b8091a6/"><i class="fab fa-linkedin-in"></i></a>
     </div>
 
     <div class="footer-text">
       <a href="../om-oss/">Om oss</a>
-      <a href="https://www.facebook.com/henry.cantwell.5">Kontakta oss</a>
+      <a href="https://www.linkedin.com/in/henry-cantwell-65b8091a6/"">Kontakta oss</a>
       <a href="https://ungforetagsamhet.se/gymnasiet">läs mer om UF</a> <br>
     </div>
     <p>@Donkey Soap UF</p>
